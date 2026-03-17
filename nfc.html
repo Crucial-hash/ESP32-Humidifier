@@ -1,0 +1,10 @@
+<script>
+  const path = window.location.pathname; // "/t=hello"
+  let text = "";
+
+  if (path.startsWith("/t=")) {
+    text = path.substring(3); // remove "/t="
+  }
+
+  document.getElementById("output").textContent = text || "No text provided";
+</script>
