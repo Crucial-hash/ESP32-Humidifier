@@ -10,9 +10,14 @@
 
 <script>
   const params = new URLSearchParams(window.location.search);
-  const text = params.get("t");
 
-  document.getElementById("output").textContent = text || "No text provided";
+  const ssid = params.get("ssid");
+  const pass = params.get("pass");
+
+  document.getElementById("output").innerHTML = `
+    SSID: ${ssid || "N/A"}<br>
+    Password: ${pass || "N/A"}
+  `;
 </script>
 
 </body>
