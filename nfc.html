@@ -1,10 +1,19 @@
-<script>
-  const path = window.location.pathname; // "/t=hello"
-  let text = "";
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>NFC Page</title>
+</head>
+<body style="background:#222; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh; font-size:2rem;">
 
-  if (path.startsWith("/t=")) {
-    text = path.substring(3); // remove "/t="
-  }
+<div id="output"></div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const text = params.get("t");
 
   document.getElementById("output").textContent = text || "No text provided";
 </script>
+
+</body>
+</html>
